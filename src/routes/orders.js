@@ -1,4 +1,4 @@
-const express = require("express");
+﻿const express = require("express");
 const router = express.Router();
 const data = require("../data");
 
@@ -15,7 +15,7 @@ router.post("/", (req, res) => {
 
   const { items } = req.body;
   if (!items || !Array.isArray(items) || items.length === 0) {
-    return res.status(400).json({ error: "Vajalik väli: items (massiiv toodetest)" });
+    return res.status(400).json({ error: "Vajalik vÃ¤li: items (massiiv toodetest)" });
   }
 
   const orderItems = [];
@@ -31,7 +31,7 @@ router.post("/", (req, res) => {
       price: product.price,
       quantity: item.quantity,
     });
-    // Vähenda laoseisu
+    // VÃ¤henda laoseisu
     product.stock -= item.quantity;
   }
 
@@ -43,8 +43,8 @@ router.post("/", (req, res) => {
     userName: user.name,
     items: orderItems,
     total: Math.round(total * 100) / 100,
-    // BUG: staatus peaks olema "vastu võetud" mitte "pending"
-    status: "pending",
+    // BUG: staatus peaks olema "vastu vÃµetud" mitte "pending"
+    status: "vastu v\u00f5etud",
     createdAt: new Date().toISOString(),
   };
 
@@ -75,7 +75,7 @@ router.get("/:id", (req, res) => {
 // PATCH /api/orders/:id/status
 router.patch("/:id/status", (req, res) => {
   const { status } = req.body;
-  const validStatuses = ["vastu võetud", "töötlemisel", "saadetud", "kohale toimetatud"];
+  const validStatuses = ["vastu vÃµetud", "tÃ¶Ã¶tlemisel", "saadetud", "kohale toimetatud"];
   if (!status || !validStatuses.includes(status)) {
     return res.status(400).json({ error: `Kehtivad staatused: ${validStatuses.join(", ")}` });
   }
@@ -86,3 +86,4 @@ router.patch("/:id/status", (req, res) => {
 });
 
 module.exports = router;
+

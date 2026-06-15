@@ -96,6 +96,10 @@ Arendajad valisid tõenäoliselt sellise arhitektuuri, sest projekt on väike ja
 
 ## GitHub Actions
 
+```text
+Tulemused: 11 läbis, 0 ebaõnnestus
+```
+
 Projektis on lisatud GitHub Actions workflow fail `.github/workflows/ci.yml`. See käivitab automaattestid iga pushi ja pull requesti korral.
 
 Pipeline teeb järgmised sammud:
@@ -107,3 +111,5 @@ Pipeline teeb järgmised sammud:
 5. Käivitab testid käsuga `node src/test.js`.
 
 See aitab kontrollida, et katkine kood ei jõuaks main harusse.
+
+Kui minna monoliitselt arhitektuurilt üle mikroteenustele, siis muutuks süsteem paremini skaleeritavaks. Näiteks kasutajate, toodete ja tellimuste loogika saaks jagada eraldi teenusteks ning iga teenust oleks võimalik eraldi arendada, testida ja vajadusel suurema koormuse jaoks eraldi käivitada. Samas muutuks süsteem keerulisemaks, sest oleks vaja lahendada teenuste omavaheline suhtlus, andmebaaside haldus, autentimine, logimine ja deployment. Selle projekti jaoks ei ole mikroteenused praegu vajalikud, sest rakendus on väike ja monoliit on lihtsam ning mõistlikum valik.

@@ -1,6 +1,16 @@
 # Veebipood
 
-<!-- TODO: Kirjelda mis see rakendus on -->
+Veebipood on lihtne Node.js ja Express.js põhine veebirakendus. Rakenduses saab vaadata tooteid, otsida tooteid, registreeruda, sisse logida ja luua tellimusi.
+
+## Kasutatud tehnoloogiad
+
+- Node.js
+- Express.js
+- JavaScript
+- HTML
+- CSS
+- Docker
+- GitHub Actions
 
 ## Tehnoloogiad
 
